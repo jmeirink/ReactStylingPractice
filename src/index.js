@@ -11,16 +11,25 @@ const currentTime = date.getHours();
 
 let greeting;
 
+const customStyle = {
+  color: ""
+};
+
 if (currentTime < 12) {
   greeting = "Good morning";
+  customStyle.color = "red";
 } else if (currentTime < 18) {
   greeting = "Good afternoon";
+  customStyle.color = "green";
 } else {
   greeting = "Good evening";
+  customStyle.color = "blue";
 }
 
 ReactDOM.render(
-  <h1>{greeting}</h1>,
+  <h1 className="heading" style={customStyle}>
+    {greeting}
+  </h1>,
 
   document.getElementById("root")
 );
